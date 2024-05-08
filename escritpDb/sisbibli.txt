@@ -1,0 +1,255 @@
+===Base de Dados sisbibli
+
+== Estrutura da tabela alufunprof
+
+|------
+|Coluna|Tipo|Nulo|Predefinido
+|------
+|//**idAluFunProf**//|int(10)|Não|
+|nome|text|Não|
+|matricula|text|Não|
+|curso|text|Não|
+|cpf|text|Não|
+|email|text|Não|
+|telefone|text|Não|
+|tipoUsuario|text|Não|
+|idSituacao|int(10)|Não|0
+|login|text|Não|
+|senha|text|Não|
+|lagradouro|text|Não|
+|cidade|text|Não|
+|estado|text|Não|
+|cep|text|Não|
+|foto|text|Sim|NULL
+== Extraindo dados da tabela alufunprof
+
+|8|Roberto Figueredo Rodrigues |12204340|Licenciatura em Computação|041.290.481|robertofr_@hotmail.com|63 8431-8547|aluno|1|robertofr|123|Rua 04, Quadra 05, Lote 20|Porto Nacional|Tocantins|77500000|7c0c1413dd40ef5e2778699f3d018e60.jpg
+|37|Fabíola Soares Barbosa|1234567|Licenciatura em Letras|12345678|fabilla@gmail.com|63 33635569|aluno|1|fabilla|1234|Rua 04, Quadra 05, Lote 20|Porto Nacional|TO|77500000|624009bc07b828f00fe517372148abed.jpg
+|42|Pedro Barbosa Figueredo|123456|Engenharia|02349872300|pedro@gmail.com|63 33636538|aluno|1|pedro|123|Rua 06, quadra 14, lote 10 Padre luzo|Porto Nacional|TO|77500000|a2582a8d83a2326dd93bf7775a458f50.png
+== Estrutura da tabela emprestimo
+
+|------
+|Coluna|Tipo|Nulo|Predefinido
+|------
+|//**idEmprestimo**//|int(10)|Não|
+|idAluFunProf|int(10)|Não|0
+|idLivro|int(10)|Não|0
+|dataEmprestimo|text|Não|
+|dataDevolucao|text|Não|
+|depuracao|int(11)|Não|
+== Extraindo dados da tabela emprestimo
+
+|2|8|8|01/03/2015|07/03/2015|1
+|10|37|7|2015-03-01|2015-04-05|1
+|13|37|22|2015-03-16|2015-03-23|0
+|14|37|8|2015-05-06|2015-05-12|1
+|15|42|8|2015-05-07|2015-07-14|0
+|16|42|7|2015-05-06|2015-05-12|1
+|17|42|7|2015-05-06|2015-05-26|1
+|18|42|7|2015-05-06|2015-05-07|1
+|20|8|22|2015-05-30|2015-06-06|1
+|21|8|22|2015-05-30|2015-06-06|1
+|22|8|22|2015-05-30|2015-06-06|0
+== Estrutura da tabela grupo
+
+|------
+|Coluna|Tipo|Nulo|Predefinido
+|------
+|//**idGrupo**//|int(10)|Não|
+|nomeGrupo|text|Não|
+|tipoGrupo|text|Não|
+|idPermissao|int(10)|Não|0
+== Extraindo dados da tabela grupo
+
+|22|IFTO|Usuário|2
+|23|Alunos|Visitante|3
+== Estrutura da tabela livro
+
+|------
+|Coluna|Tipo|Nulo|Predefinido
+|------
+|//**idLivro**//|int(10)|Não|
+|titulo|text|Não|
+|subtitulo|text|Não|
+|issn|text|Não|
+|dataPublicacao|text|Não|
+|dataAquisicao|text|Não|
+|numExemplar|text|Não|
+|volume|text|Não|
+|numPagina|text|Não|
+|areaConhecimento|text|Não|
+|autor|text|Não|
+|resumo|text|Não|
+|nomeEditora|text|Não|
+|cnpj|text|Não|
+|telefone|text|Não|
+|endereco|text|Não|
+|email|text|Não|
+|site|text|Não|
+|capaLivro|text|Sim|NULL
+== Extraindo dados da tabela livro
+
+|7|PHP5.1|Conceitos Básicos e Avançados|123456|2014-03-10|2015-02-05|20|2|454|Computação|Walace Soares|PHP (um acrônimo recursivo para &quot;PHP: Hypertext Preprocessor&quot;, originalmente Personal Home Page) é uma linguagem interpretada livre, usada originalmente apenas para o desenvolvimento de aplicações presentes e atuantes no lado do servidor, capazes de gerar conteúdo dinâmico na World Wide Web.2 Figura entre as primeiras linguagens passíveis de inserção em documentos HTML, dispensando em muitos casos o uso de arquivos externos para eventuais processamentos de dados.|Editora Saraiva|12345678/0001| | | |www.editorasaraiva.com.br|e157bdfd9d5cf374fe15ac654deb8838.jpg
+|8|HTML|Rápido e Prático  |12345|2010-03-12|2013-03-23|34|1|564|Computação|Leandro Campos|HTML5 (Hypertext Markup Language, versão 5) é uma linguagem para estruturação e apresentação de conteúdo para a World Wide Web e é uma tecnologia chave da Internet originalmente proposto por Opera Software.1 É a quinta versão da linguagem HTML. |Editora Terra|1213334|75674373487|Rua 04, Quadra 05, Lote 20|editoraterra@gmail.com|www.terraeditora.com.br|e157bdfd9d5cf374fe15ac654deb8839.jpg
+|22|UML 2.3 |Teoria e Prática|111222|2013-02-05|2014-09-16|20|2|330|Computação|Rodrigo de Souza| O livro mostra as ferramentas para edição de imagens digitais, o que envolve tratamento, retoque, pintura e aplicação de efeitos. Por meio de atividades e exercícios aborda os principais recursos em situações do dia a dia dos profissionais que usam esse programa na geração de produtos para design, web, fotografia e vídeo. As orientações ajudam a consolidar os conhecimentos de maneira leve e prática. Descreve elementos básicos, ferramentas de pintura, texto, forma, demarcador, seleção e retoque, montagens e ajustes de imagem, criação de padrões, camadas e canais, inserção e exportação de arquivos para web, dispositivos móveis e PDF, animação por quadros e por linha de tempo, Device Central e Zoomify, cenários panorâmicos com o Photomerge, edição de quadros de vídeo, filtros de correção e de efeitos, camadas 3D e impressão.|Abril Editora|111222333/0001|(66) 4563-6539|Rua das Trincheiras, Rio de Janeiro|abrileditora@gmail.com.br|www.abrileditora.com.br|128138ebd027e77337c29e172cde04b5.jpg
+== Estrutura da tabela noticia
+
+|------
+|Coluna|Tipo|Nulo|Predefinido
+|------
+|//**idNoticia**//|int(11)|Não|
+|titulo|text|Não|
+|resumo|text|Não|
+|texto|text|Não|
+|dataHora|datetime|Não|
+|foto|text|Não|
+== Extraindo dados da tabela noticia
+
+|6|Recorde: Xiaomi vende 800 mil unidades do Redmi Note 2 em 12 horas|A apresentação do Redmi Note 2, da Xiaomi, na semana passada veio acompanhada de um recorde: a empresa vendeu 800 mil unidades do smartphone em 12 horas de pré-venda.|A apresentação do Redmi Note 2, da Xiaomi, na semana passada veio acompanhada de um recorde: a empresa vendeu 800 mil unidades do smartphone em 12 horas de pré-venda.
+
+O modelo tem duas versões, o Redmi Note 2 e o Redmi Note 2 Prime, com vendas exclusivas na China por enquanto. Custando US$ 125, cerca de R$ 440, o celular possui 2 GB de RAM e câmera traseira de 13 megapixel. Confira abaixo todas as especificações. 
+
+Sistema operacional: Android 5.0 (Lollipop) com MIUI 7
+Tela: 5,5 polegadas
+Resolução da tela: 1920x1080 pixels (Full HD)
+Chipset: MediaTek Helio X10
+CPU: octa-core de 2 GHz
+GPU: PowerVR G6200
+Memória RAM: 2 GB
+Armazenamento interno: 16 GB (expansível)
+Câmera traseira: 13 megapixels
+Câmera frontal: 5 megapixels
+Bateria: 3.060 mAh (removível)
+Dimensões: 152 mm (altura) x 76 mm (largura)
+Espessura: 8,25 mm
+Peso: 160 gramas
+
+Como reportado aqui no Olhar Digital, uma imagem que vazou no site Weibo mostrou o desempenho do novo Redmi Note 2 frente aos smartphones populares, mas que já têm algum tempo no mercado. O novo modelo da Xiaomi superou o Galaxy S5, o Google Nexus 5 e o G3, da LG.|0000-00-00 00:00:00|0d4c3c52f82a012c932863b31393dc97.jpg
+|11|Windows 10: conheça novidades e limitações e aprenda a atualizar|Presente e mais de um bilhão de computadores em todo o mundo, o Windows 10 é um dos principais lançamentos do mercado de tecnologia de 2015. O nova versão do sistema operacional da Microsoft está liberada desde o dia 29 de julho. Se você ainda está em dúvida se deve ou não atualizar o seu PC, nós separamos as principais novidades da nova plataforma.|Presente e mais de um bilhão de computadores em todo o mundo, o Windows 10 é um dos principais lançamentos do mercado de tecnologia de 2015. O nova versão do sistema operacional da Microsoft está liberada desde o dia 29 de julho. Se você ainda está em dúvida se deve ou não atualizar o seu PC, nós separamos as principais novidades da nova plataforma.
+
+Depois de muita reclamação dos usuários do Windows 8, o Menu Iniciar está de volta. É verdade, ele mudou um pouco, mas está ali. Através do atalho, é possível ter acesso à informação instantânea oferecida pelos blocos com a simplicidade e familiaridade que todo usuário de Windows tem com o Menu Iniciar.
+
+O Internet Explorer foi definitivamente aposentado; o navegador embarcado no Windows 10 é o Edge – criado do zero para acabar com o legado negativo do seu antecessor. Testes de desempenho mostram que o navegador está muito mais rápido do que o Explorer, chegando a superar o Chrome em algumas ocasiões. 
+
+Para quem costuma jogar no PC, o DirectX 12 é um diferencial exclusivo e bem interessante; a novidade promete melhorar o desempenho em até 50% e otimizar o consumo de energia em relação ao DirectX 11. É obrigatório para quem quer o máximo em qualidade gráfica em jogos. Quem não quer?!
+
+Aliás, para quem curte videogame, principalmente para quem joga Xbox One, a integração com o Windows 10 é outro grande diferencial. Em alguns games será possível duas pessoas jogarem simultaneamente, uma no PC, outra no console. Agora é possível também fazer streaming dos games que estão rodando no console para o seu computador ou tablet por meio da rede local. A integração permite aproveitar as opções da Xbox Live para games no PC e interagir com seus amigos na rede da Microsoft, gravar e publicar vídeos de jogos, entre outras coisas.
+
+
+A integração do Windows 10 com smartphones é uma peculiaridade à parte. Não importa se você usa iOS, Android ou Windows Phone: o Windows 10 irá abraçar seu celular em vários aspectos, com integração do OneDrive, OneNote, Skype, Office, Outlook, etc. Até mesmo a assistente Cortana será liberada para as plataformas concorrentes.
+
+E por falar em Cortana, a assistente pessoal do Windows 10 só estará disponível para os brasileiros a partir de 2016. A exemplo da Siri e do Google Now, a assistente virtual oferece informações contextuais baseada nos dados que coleta sobre você e o que você costuma procurar na internet. 
+
+A exemplo dos smartphones, os aplicativos instalados no PC com Windows 10 também têm notificações. A central de notificações traz botões de ações rápidas, como modo avião, ligar ou desligar o Bluetooth, alterar o brilho da tela, ativar ou desativar Wi-Fi e assim por diante. Uma das principais reclamações do Windows 8 é que ele parecia ter sido planejado exclusivamente para telas sensíveis ao toque, enquanto os tradicionais mouse e teclado foram deixados para trás. A Microsoft resolveu a situação com o recurso Continuum. O Windows 10 é diferente em tablets, laptops e destkops. Se o novo sistema operacional foi usado em um híbrido, a interface alterna quando você está com o teclado acoplado ou utiliza no modo tablet.
+
+O Windows 10 oferece a possibilidade de criar diversos desktops virtuais – os quais você pode alternar rapidamente, como se você tivesse vários monitores mostrando coisas diferentes ao mesmo tempo.
+Sobe som
+
+O Windows 10 traz também suporte a autenticação por biometria. Mas para usar a plataforma Windows Hello, que utiliza autenticação biométrica para login no sistema, será preciso adquirir equipamentos especiais, incluindo uma câmera infravermelha para reconhecimento facial, ou um leitor de impressões digitais.
+
+Por último, talvez a melhor das novidades é que o Windows 10 é gratuito! Isso mesmo, para quem já usa o Windows 7 ou 8.1 originais, a atualização não custa nada. A maioria dos computadores recebeu ou receberá notificações avisando sobre a possibilidade de atualização, mas se você ainda não está na lista pode baixar o Windows 10 manualmente. Basta ir à loja de aplicativos da Microsoft e baixar o “Obter o Windows 10”, ele se encarregará de todo o processo. Se seu computador tem Windows 8, é preciso antes mudá-lo para a versão 8.1 - o que também sai de graça.
+
+Se você está decidido, mãos à obra. Se restar qualquer dúvida, confira um especial que nosso time online preparou respondendo as principais questões sobre o Windows 10 e sua atualização. Aproveite e veja também uma lista com uma série de atalhos para usar o novo sistema operacional como um verdadeiro profissional!|0000-00-00 00:00:00|27a535ddac88f0dccf2ad2ad54794914.png
+|13|Redes Sociais: 10 coisas que nunca deveríamos publicar|Para tanto, se você é daqueles que adora compartilhar tudo que passa na sua vida nas redes sociais, saiba que nem todas as informações podem surtir a seu favor, bem ao contrário, muitas delas podem até causar incômodos.|Confira abaixo 10 dicas do que nunca poderíamos expor nas redes sociais:
+
+1 - Data de aniversário: Todos nós gostamos de ser lembrados no nosso aniversário, não é verdade?  Para tanto, as datas expostas nas redes sociais são consideradas um prato cheio para os chamados “ladrões de identidade”, já que essa é uma das principais informações referente a você.
+
+2 - Status do relacionamento: Fornecer qualquer tipo de informação pessoal não é legal. Caso alguém tenha interesse na sua vida, essa mudança de status poderá ocasionar problemas. Por exemplo, se você sempre teve o status “casada” e um belo dia alterar para “solteira”, algum especulador irá deduzir que você costuma ficar sozinha em casa, o que, nos diais atuais acaba sendo perigoso.
+
+3 - Indicar a sua localização: Quando as pessoas viajam ou mesmo vão para algum lugar que julgam interessante, a primeira coisa é compartilhar a sua localização ou mesmo, postar fotos do local onde está, pois bem, essa informação é valiosa, por exemplo, para alguém que esteja de olho na sua casa, saberá que ela está vazia.
+
+4 - Jamais compartilhar que está sozinho em casa: Algumas pessoas não conseguem dar um passo sem antes notificar em alguma rede social. Algumas comentam até com quem estão acompanhas e mais, se estão sozinhas. O ideal não é comunicar nas redes sociais que está sozinho ou mesmo que ficará sozinho em algum momento, pessoas de má índole podem se aproveitar desse fato para ter acesso mais fácil a sua casa.
+
+5 - Evite expor a imagem e nome de seus filhos: Sabemos que os orgulhosos pais adoram encher as redes sociais com inúmeras fotos de crianças, o que não sabem é o risco que estão correndo. Colocar o nome completo de crianças nas redes sociais é um perigo, como também, postar certas imagens dos pequenos. Então, como não sabemos quem está vendo, quem está copiando as imagens, melhor mesmo é não expor as crianças. Muitos pedófilos acabam encontrando fotos de crianças e repassando para sites de conteúdo impróprio, assim, o  melhor mesmo é  guardar as fotos dos anjinhos para você e seus amigos ou, no máximo, compartilhar apenas para os amigos mais chegados.
+
+6 - Conversas pessoais: As redes sociais servem para debater ideias, trocar informações, entre outras ações, porém, cuidado para não esquecer que está em uma mídia social e transformá-la em um bate-papo repleta de conversas de cunho pessoal.
+
+7 - Inserir informações da empresa em que trabalha: Não é interessante postar comentários sobre a rotina de trabalho dentro de uma empresa. Muitas, inclusive, acabaram bloqueando o acesso as redes sociais para evitar que certos conteúdos acabem sendo expostos. Caso seja seu casso, prefira usar mesmo o tradicional e-mail para trocar informações.
+
+8 - Não compartilhe imagens ou mesmo conteúdos que estejam denigrindo alguma pessoa:  Sabemos que temos o direito de nos expressar, para tanto, mesmo que você concorde com determinado assunto, tenha o cuidado de se manifestar sobre ele, não use palavras de baixo calão, tampouco acuse alguma pessoa sem provas. Você poderá ser acionado judicialmente sobre isso e responder processo por difamação e calúnia, então, cuidado com os comentários, tudo que é dito, na internet ou não, precisa ser provado.
+
+9 - Atenção com as imagens postadas: As pessoas costumam postar fotos que consideram engraçadas nas redes sociais, dançando, bêbadas, em situações estranhas, etc. Pois bem, estas mesmas fotos podem acabar caindo nas mãos de seu chefe, de seus alunos, de seus colegas de trabalho ou mesmo de outras pessoas do seu convívio e não acabarem não sendo  bem interpretadas. Lembre-se, uma boa reputação conta muito no meio empregatistico.
+
+10 - Quanto menos expor detalhes da vida melhor: É muito bom dividir algum resultado positivo da nossa vida. No entanto, reserve aqueles mais íntimos somente para os amigos mais chegados e, de preferência, bem longe das redes sociais. Assim, não espalhe que teve um aumento de salário, uma nova promoção, que o namorado ou namorada lhe presentou com um maravilhoso e caro presente ou até mesmo toda a felicidade que está vivendo. Estas informações, além de gerar a cobiça de terceiros, poderá ser usada para que seu nome ou sua imagem possa ser aplicado em algum golpe. Então, fica a dica, quanto menos informações postadas, melhor para a sua privacidade!|0000-00-00 00:00:00|676cd00048654c2f9aaef45f619fd373.jpg
+|20|Quais são as principais ferramentas do Google Drive?|O Google Drive é um serviço de armazenamento e também sincronização de arquivos do Google. O serviço foi lançado em 2012 e com o passar do tempo está sendo cada vez mais utilizado.|O Google Drive é considerado um pacote completo de armazenamento em nuvem. Através do serviço é possível aproveitar vários recursos, como um processador de texto, folha de cálculo e até mesmo um programa para elaborar apresentações.
+
+Para acessar o Google Drive é muito fácil, ou seja, basta ter uma conta no Google, ir no seu Gmail e clicar no Drive. Cada usuário conta com 15GB de armazenamento para qualquer coisa que enviar, incluindo fotos, vídeos, documentos, arquivos do Photoshop, etc. Com isso é possível acessar qualquer arquivos a partir do site do Drive.
+
+O ponto positivo do Google Drive é que o serviço necessita de pouca manutenção. Para quem faz uso também do e-mail do Google, o Gmail, salvar anexos de e-mail para Drive é muito fácil e rápido. Assim, o Drive pode acabar por completo com os anexos nos e-mails, já que é possível enviar fotos, ou mesmo um vídeo através de um simples compartilhamento com um amigo, ou seja, passando o link de acesso. O serviço, nesse caso, torna-se menos demorado para ambas as partes.
+
+O Google Drive também permite realizar buscas por palavra-chave e filtros por tipo de arquivo, e ainda reconhece texto em documentos digitalizados, utilizando a tecnologia de reconhecimento óptico de caracteres.
+
+Abaixo, confira algumas dicas de uso do Google Drive:
+
+Salvar arquivos: Através do Drive é possível salvar arquivos em vários formatos, ou seja, desde o HTML até o RTF;
+Polyline: O usuário tem a disposição no Google Drive recursos para criar linhas e desenhar gráficos e tabelas dentro do próprio trabalho;
+Tradutor: O Google Tradutor está integrado ao Drive, com isso é possível realizar traduções de forma mais simples e rápida;
+Dicionário: Dentro do próprio Google Drive há um dicionário. Deste modo fica fácil tirar qualquer duvida quando estiver escrevendo;
+Templates: O Drive oferece mais de 300 tipos de templates que podem ajudar no trabalho que está sendo feito;
+Trabalhar de modo off-line: Para não perder o que está fazendo, o Google Drive pode ser acessado de modo off-line. Basta salvar os documentos e termina-los em outro momento;
+Pastas conectadas: Através do Google Drive é possível criar pastas em vários arquivos e ainda conectá-las em outras pastas;
+Compartilhar pastas: Compartilhar documentos com mais de uma pessoa nunca foi tão fácil. Através do Drive o compartilhamento fica fácil e rápido;
+Edição simultânea: Através do Drive um mesmo documento pode ser editado simultaneamente por mais de uma pessoa;
+Envio de e-mail: O usuário pode enviar um arquivo ou mesmo uma pasta para toda a lista de e-mails da sua conta, sem a necessidade de qualquer marcação;
+Organização de tarefas: As tarefas podem ser todas organizadas através do Google Drive, com marcações, por exemplo, dos arquivos que já foram vistos e os que precisam ser abertos;
+Marcação conforme relevância: Também é possível marcar um determinado arquivo como sendo importante, para isso, o Drive disponibiliza uma estrela;
+Vários arquivos: O usuário pode enviar vários arquivos de uma só vez para os seus contatos;
+Cores para as pastas: Também é possível utilizar diferentes cores para diferenciar as pastas;
+Visualização rápida: Antes de enviar um documento é possível visualizar o seu template;
+Inserir anotações: O usuário tem a possibilidade de inserir anotações em documento;
+Visualização de histórico: Através do Google Drive o usuário pode visualizar todas as alterações que foram realizadas em um documento através do seu histórico. Também é possível reverter alguma das mudanças;
+Pesquisa rápida: Através do Google drive é possível procurar algum termo na internet. Para isso, basta inserir o termo e ir na opção pesquisar;
+Código publicável: Para inserir uma publicação ou mesmo um trabalho dentro do seu site o Google Drive conta com código publicável em postagens e blogs, que poderá ser acessado por qualquer visitante;
+Impressão: Para imprimir um documento na mesma forma que uma página na internet, basta optar por “print as a webpage”;
+Número de visitas: O Google Drive oferece o reconhecimento de quantas visualizações um determinado arquivo teve;
+Vídeos: O usuário pode inserir vídeos durante as apresentações, bem como pausá-los quando for necessário;
+Google Mobile: O Google Drive também conta com um aplicativo que permite ao usuário o acesso aos seus documentos através de dispositivos móveis.
+Bacana, né? Nas próximas semanas vamos explorar os recursos de texto, tabelas/planilhas, apresentações além do serviço de armazenagem em nuvem.|2015-08-19 11:02:13|82b2ce519a1e57199166b9db0453a40c.png
+== Estrutura da tabela permissao
+
+|------
+|Coluna|Tipo|Nulo|Predefinido
+|------
+|//**idPermissao**//|int(10)|Não|
+|cadastrar|text|Não|
+|visualizar|text|Não|
+|alterar|text|Não|
+|deletar|text|Não|
+== Extraindo dados da tabela permissao
+
+|1|sim|sim|sim|sim
+|2|sim|sim|sim|nao
+|3|nao|sim|nao|nao
+== Estrutura da tabela situacao
+
+|------
+|Coluna|Tipo|Nulo|Predefinido
+|------
+|//**idSituacao**//|int(10)|Não|
+|ativo|text|Não|
+|pendente|text|Não|
+|inativo|text|Não|
+|bloqueado|text|Não|
+== Extraindo dados da tabela situacao
+
+|1|sim|nao|nao|nao
+|2|nao|sim|nao|nao
+|3|nao|nao|sim|nao
+|4|nao|nao|nao|sim
+== Estrutura da tabela usuario
+
+|------
+|Coluna|Tipo|Nulo|Predefinido
+|------
+|//**idUsuario**//|int(10)|Não|
+|nome|text|Não|
+|email|text|Não|
+|telefone|text|Não|
+|idGrupo|int(10)|Não|0
+|login|text|Não|
+|senha|text|Não|
+== Extraindo dados da tabela usuario
+
+|1|Roberto Figueredo Rodrigues|robertofr_@hotmail.com|63 8431-8547|22|robertofr|123
+|3|Fabiola Soares Barbosa|fabilla2010@hotmail.com|63 8451-3407|23|fabilla|123
+|4|Coordenadores|cordenacao@ifto.com|22323232|22|coor|123

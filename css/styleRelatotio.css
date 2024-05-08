@@ -1,0 +1,32 @@
+body{
+background-color:#fff;
+}
+table{
+width:100%;
+}
+table tr td{
+font-size:13px;
+}
+h2{
+font-size:20px;
+text-align:center;
+}
+h2 span{
+font-size:14px;
+text-align:right;
+font-weight:normal;
+}
+.topo{
+font-weight:bold;
+font-size:14px;
+text-align:center;
+}
+.topo1{
+font-weight:bold;
+font-size:14px;
+text-align:center;
+background-color:#C0C0C0;
+}
+span{
+font-weight:bold;
+}
